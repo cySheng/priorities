@@ -12,13 +12,20 @@
   <body>
     <nav class="nav">
       <div class="nav-left">
-        <a class="nav-item">
-          <h1> Priorities </h1>
-        </a>
+        <%= link_to ("Priorities"), root_path, class: "nav-item"%>
+      </div>
+    
+      <div class="nav-right nav-menu"> 
+        <% if signed_in? -%>
+            <%= button_to ("Sign Out"), sign_out_path, method: :delete , class: "nav-item"%>
+        <% else %>
+            <%= link_to ("Sign in"), sign_in_path, class: 'nav-item' %>
+            <%= link_to ("Sign up"), sign_up_path, class: 'nav-item' %>
+        <% end %>
       </div>
     </nav>
 
-    <section class="hero is-dark">
+    <section class="hero is-info">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
