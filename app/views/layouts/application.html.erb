@@ -17,37 +17,21 @@
 
   <body>
   
-  <section class="hero is-primary is-fullheight">
-  <!-- Hero header: will stick at the top -->
-  <div class="hero-head">
-    <header class="nav">
-      <div class="container">
-        <div class="nav-left">
-          <a class="nav-item">
-            <!-- <img src="images/bulma-type-white.png" alt="Logo"> -->
-          </a>
-        </div>
-        <span class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <div class="nav-right nav-menu">
-        <span class="nav-item">
-         <% if signed_in? -%>
-            <%= button_to ("Sign Out"), sign_out_path, method: :delete , class: "button is-default"%>
-          <% else %>
-            <%= link_to ("Sign in"), sign_in_path, class: 'button is-default' %>
-            <%= link_to ("Sign up"), sign_up_path, class: 'button is-default' %>
-          <% end %>
-        </span>
-        </div>
-      </div>
-    </header>
-  </div>
+    <section class="hero is-primary">
+    
+    <!-- renders header -->
+    <%= render partial: "/layouts/header", layout: false %>
 
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="content is-medium">
+          
+        
+  
+
+
+<!--   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="content is-medium">
         <h1 class="title">
@@ -55,10 +39,10 @@
         </h1>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
+  <!-- <div class="hero-foot">
     <nav class="tabs">
       <div class="container">
         <ul>
@@ -67,9 +51,12 @@
       </div>
     </nav>
   </div>
-  </section>       
+  </section>        -->
         
-      <%= yield %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
+    </section>
   </body>
 </html>
