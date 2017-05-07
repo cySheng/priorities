@@ -1,5 +1,7 @@
 <%= form_for @priority do |form| %>
 
-<%= render partial: '/priorities/form', object: form %>
+	<%= render partial: '/priorities/form', object: form %>
+
+	<%= form.submit 'Create Priority', class: 'button' %>
 
 <% end %>

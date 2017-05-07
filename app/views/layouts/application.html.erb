@@ -17,6 +17,8 @@
 
   <body>
   
+
+
     <section class="hero is-primary">
     
     <!-- renders header -->
@@ -26,6 +28,9 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="content is-medium">
+          <% flash.each do |key, value| -%>
+            <div id="flash_<%= key %>"><%=h value %></div>
+          <% end %>
           
         
   
