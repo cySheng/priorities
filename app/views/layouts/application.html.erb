@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Priorities</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/7cb98041d7.js"></script>
     
 
     <%= csrf_meta_tags %>
@@ -19,7 +19,7 @@
   
 
 
-    <section class="hero is-primary">
+    <section class="hero is-primary is-fullheight">
     
     <!-- renders header -->
     <%= render partial: "/layouts/header", layout: false %>
@@ -46,7 +46,14 @@
     </div>
   </div> -->
 
-  <!-- Hero footer: will stick at the bottom -->
+
+        
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+      <!-- Hero footer: will stick at the bottom -->
   <!-- <div class="hero-foot">
     <nav class="tabs">
       <div class="container">
@@ -57,11 +64,6 @@
     </nav>
   </div>
   </section>        -->
-        
-          <%= yield %>
-        </div>
-      </div>
-    </div>
     </section>
   </body>
 </html>

@@ -9,12 +9,19 @@ class PrioritiesController < ApplicationController
 
 	def create
 		@priority = current_user.priorities.new(priority_params)
-		if @priority.save
-			flash[:success] = "New priority created"
+		if @priority.check
+			if @priority.save
+				flash[:success] = "New priority created"
+				redirect_to root_path
+			else
+				flash[:error] = "There was a problem creating your priority"
+				redirect_to new_priority_path
+			end
 		else
-			flash[:error] = "There was a problem creating your priority"
+			flash[:error] = "You have already created a priority today!"
+			redirect_to root_path
 		end
-		redirect_to root_path
+		
 	end
 
 	private

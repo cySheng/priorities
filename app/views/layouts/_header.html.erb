@@ -3,19 +3,18 @@
     <header class="nav">
       <div class="container">
         <div class="nav-left">
-            <a class="nav-item">
-              Priorities
-            </a>
+          <%= link_to "Priorities", root_path, class: 'nav-item' %>
         </div>
-        <span class="nav-toggle">
+        <span class="nav-toggle"  id="nav-toggle">
           <span></span>
           <span></span>
           <span></span>
         </span>
-        <div class="nav-right nav-menu">
+        <div class="nav-right nav-menu" id="nav-menu">
         <span class="nav-item">
          <% if signed_in? -%>
             <%= button_to ("Sign Out"), sign_out_path, method: :delete , class: "button is-default"%>
+            <%= button_to ("New Priority"), new_priority_path, method: :get, class: "button is-default" %>
           <% else %>
             <%= link_to ("Sign in"), sign_in_path, class: 'button is-default' %>
             <%= link_to ("Sign up"), sign_up_path, class: 'button is-default' %>
