@@ -1,7 +1,7 @@
 
-<% if @priority != nil %>
-<% @priority.each do |x| %>
+<% if @priorities != nil %>
+<% @priorities.each do |x| %>
 	<%= x.title %>
-	<%= x.user %>
+	<%= x.user.nickname %>
 <% end %>
 <% end %>

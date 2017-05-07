@@ -3,4 +3,5 @@ class User < ApplicationRecord
   has_many :priorities
   has_many :votes
   enum role: [:normal, :special, :superadmin]
+
 end
