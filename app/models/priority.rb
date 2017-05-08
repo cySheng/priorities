@@ -6,7 +6,6 @@ class Priority < ApplicationRecord
 
 	def check
 		last = self.user.priorities.count
-		byebug
 		if last == 0
 			return true
 		else 
