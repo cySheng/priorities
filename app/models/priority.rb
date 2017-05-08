@@ -5,10 +5,12 @@ class Priority < ApplicationRecord
 	# has_many :votes
 
 	def check
-		if last = self.user.priorities
-			return false
-		else 
+		last = self.user.priorities.count
+		byebug
+		if last == 0
 			return true
+		else 
+			return false
 		end
 		# last = self.user.priorities[-2]
 		# if last == nil
