@@ -6,16 +6,21 @@
 			<div class="column">
 				<div class="box">
 					<article class="media">
-
+						<!-- <div class="media-left">
+							<br>
+							<p><%#= x.total %></p>
+						</div> -->
+						<% if signed_in? %>
 						<div class="media-left">
 							<span class="icon is-medium">
-								<%= link_to raw("<i class=\"fa fa-arrow-up\" aria-hidden=\"true\"></i>"), votes_path(x.id), method: :post %>
+								<%= link_to raw("<i class=\"fa fa-arrow-up\" aria-hidden=\"true\"></i>"), priority_votes_path(x.id, "upvote"), method: :post %>
 							</span>
 							<br>
 							<span class="icon is-medium">
-								<%= link_to raw("<i class=\"fa fa-arrow-down\" aria-hidden=\"true\"></i>"), votes_path, method: :post %>
+								<%= link_to raw("<i class=\"fa fa-arrow-down\" aria-hidden=\"true\"></i>"), priority_votes_path(x.id, "downvote"), method: :post %>
 							</span>
 						</div>
+						<% end %>
 
 						<div class="media-content">
 							<div class="content">

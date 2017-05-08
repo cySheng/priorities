@@ -21,7 +21,6 @@ class PrioritiesController < ApplicationController
 			flash[:error] = "You have already created a priority today!"
 			redirect_to root_path
 		end
-		
 	end
 
 	private

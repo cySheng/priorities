@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20170507025210) do
   create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "priority_id"
-    t.integer  "choice",      default: 0
+    t.integer  "direction",   default: 0
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["priority_id"], name: "index_votes_on_priority_id", using: :btree
