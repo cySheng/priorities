@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 	root 'priorities#index'
 	resources :priorities do 
     resources :votes, only: [:create]
-  end 
-
+  end
   
 end
