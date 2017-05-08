@@ -5,13 +5,18 @@ class Priority < ApplicationRecord
 	# has_many :votes
 
 	def check
-		last = self.user.priorities[-2]
-		if last == nil
-			return true
-		elsif last.created_at.to_date == Date.today
+		if last = self.user.priorities
 			return false
+		else 
+			return true
 		end
-		return true
+		# last = self.user.priorities[-2]
+		# if last == nil
+		# 	return true
+		# elsif last.created_at.to_date < Date.today
+		# 	return false
+		# end
+		# return true
 	end
 
 	# def total
