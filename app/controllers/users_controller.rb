@@ -2,7 +2,6 @@ class UsersController < Clearance::UsersController
 
 	def create
 		@user = User.new(user_params)
-
 		if @user.save 
 			flash[:success] = "Your account has been created"
 			sign_in @user
