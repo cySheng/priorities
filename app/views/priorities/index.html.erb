@@ -14,7 +14,7 @@
 							<br>
 							<p><%= x.get_upvotes.size %></p>
 						</div>
-						<% if signed_in? && !(current_user.voted_for? Priority.find(x.id))%>
+						<% if signed_in? && !(current_user.voted_for? Priority.find(x.id)) && x.user != current_user %>
 						<div class="media-left">
 							<span class="icon is-medium">
 								<%= link_to raw("<i class=\"fa fa-arrow-up\" aria-hidden=\"true\"></i>"), priority_votes_path(x.id, "up"), method: :post %>
