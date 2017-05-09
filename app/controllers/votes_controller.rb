@@ -7,7 +7,7 @@ class VotesController < ApplicationController
 			else
 				priority.downvote_from current_user
 			end
-			redirect_to root_path
 		end
+		redirect_to root_path
 	end
 end
