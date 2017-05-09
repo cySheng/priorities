@@ -2,6 +2,8 @@ class VotesController < ApplicationController
 	def create
 		priority = Priority.find(params[:priority_id])
 		if current_user.voted_for? priority
+			flash[:error] = "You already voted for this!"
+		else
 			if params[:format] == "up" 
 				priority.upvote_from current_user
 			else
