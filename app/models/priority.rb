@@ -12,7 +12,6 @@ class Priority < ApplicationRecord
 		# 	return false
 		# end
 		last = self.user.priorities[-2]
-		byebug
 		if last == nil
 			return true
 		elsif last.created_at.to_date + 2 > Date.today
