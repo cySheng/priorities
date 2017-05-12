@@ -2,14 +2,14 @@
 <% if @priorities != nil %>
 
 	
-		<% @priorities.each.with_index do |x, y| %>
+		<% @priorities.each do |x, y| %>
 		<div class="columns">
 			<div class="column is-4 is-offset-4">
 				<div class="box">
 					<article class="media">
 						<div class="media-left">
 							<br>
-							<p><%= x.get_upvotes.size.to_i - x.get_downvotes.size.to_i %></p>
+							<p><%= y %></p>
 						</div>
 						<% if signed_in? && !(current_user.voted_for? Priority.find(x.id)) && x.user != current_user %>
 						<div class="media-left">
