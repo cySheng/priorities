@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include Clearance::User
-  has_many :priorities, dependent: :destroy, on_delete: :cascade
+  has_many :priorities, dependent: :destroy
    acts_as_voter
   # has_many :votes
 
