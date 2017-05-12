@@ -1,6 +1,12 @@
 class PrioritiesController < ApplicationController
 	def index
-		@priorities = Priority.all
+		all_of_it = Priority.all
+		@priorities = {}
+		byebug
+		all_of_it.each do |x|
+			@priorities[x] = x.get_upvotes.size.to_i - x.get_downvotes.size.to_i
+		end
+		@priorities = @priorities.sort_by {|k,v| v}.reverse
 	end
 
 	def new
