@@ -1,13 +1,10 @@
 
 <% if @priorities != nil %>
 
-	<div class="columns">
+	
 		<% @priorities.each.with_index do |x, y| %>
-		<% if y > 0 && y % 2 == 0 %>
-				</div>
-				<div class="columns">
-		<% end %>
-			<div class="column">
+		<div class="columns">
+			<div class="column is-4 is-offset-4">
 				<div class="box">
 					<article class="media">
 						<div class="media-left">
@@ -39,9 +36,7 @@
 						</div>
 					</article>
 		  	</div>
-		  </div>
-			
-			
-		<% end %>
-	</div>
+		  </div>	
+		</div>
+	<% end %>
 <% end %>

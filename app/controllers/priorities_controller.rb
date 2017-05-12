@@ -1,6 +1,9 @@
 class PrioritiesController < ApplicationController
 	def index
+		all_of_it = Priority.all
 		@priorities = Priority.all
+
+
 	end
 
 	def new
